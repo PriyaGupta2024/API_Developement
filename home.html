@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <h1>Welcome to Our Admission Portal</h1>
+    <div class="hero">
+        <!-- Corrected Image Path -->
+        <img src="{{ url_for('static', filename='classes_F.jpg') }}" alt="Classes Admission">
+        <div class="overlay"></div>
+        <div class="content">
+            <p>"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela</p>
+        </div>
+    </div>
+</body>
+</html>
