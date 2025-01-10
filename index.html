@@ -1,0 +1,47 @@
+{% extends 'master.html' %}
+{% include 'header.html' %}
+
+{% block title %} Add Students {% endblock %}
+
+{% block body %}
+<h1 style="font-size: 3rem; text-align: center;">Student's List</h1>
+<div class="container">
+        <table class="table">
+            <thead style="background-color:green;color:aliceblue;">
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>School Name</th>
+                <th>Medium</th>
+                <th>Gender</th>
+                <th>Phone Number</th>
+                <th>Fee</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.fullname }}</td> <!-- Changed to fullname -->
+                    <td>{{ student.FatherName }}</td> <!-- Changed to FatherName -->
+                    <td>{{ student.MotherName }}</td> <!-- Changed to MotherName -->
+                    <td>{{ student.SchoolName }}</td> <!-- Changed to SchoolName -->
+                    <td>{{ student.Medium }}</td> <!-- Changed to Medium -->
+                    <td>{{ student.Gender }}</td> <!-- Changed to Gender -->
+                    <td>{{ student.PhoneNumber }}</td> <!-- Changed to PhoneNumber -->
+                    <td>{{ student.Fee }}</td> <!-- Changed to Fee -->
+                    <td>
+                  <span style="font-size:24px;color:blue;">
+                    <a href="/{{ student.id}}/edit"> <i class="fas fa-edit"></i></a> </span>
+                    |
+                            <span style="font-size:24px;color:red;">
+                                <a href="/{{ student.id }}/delete"> <i class="fas fa-trash-alt"></i></a> </span>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</div>       
+{% endblock %}
