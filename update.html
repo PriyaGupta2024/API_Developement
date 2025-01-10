@@ -1,0 +1,59 @@
+{% extends 'master.html' %}
+{% include 'header.html' %}
+
+{% block title %} Add Students {% endblock %}
+
+
+{% block body %}
+<h1>Create a New Student</h1>
+<div class="container">
+    <form method="POST" action='' style="width: 100%; margin: auto;">
+        <table class="table" style="width: 100%; border-spacing: 15px;">
+            <tr>
+                <td><label for="fullname">Full Name:</label></td>
+                <td><input type="text" id="fullname" name="fullname"  value="{{student.fullname}}" ></td>
+            </tr>
+            <tr>
+                <td><label for="FatherName">Father's Name:</label></td>
+                <td><input type="text" id="FatherName" name="FatherName" value="{{student.FatherName}}"></td>
+            </tr>
+            <tr>
+                <td><label for="MotherName">Mother's Name:</label></td>
+                <td><input type="text" id="MotherName" name="MotherName" value="{{student.MotherName}}"></td>
+            </tr>
+            <tr>
+                <td><label for="SchoolName">School Name:</label></td>
+                <td><input type="text" id="SchoolName" name="SchoolName" value="{{student.SchoolName}}"></td>
+            </tr>
+            <tr>
+                <td><label for="Medium">Medium:</label></td>
+                <td>
+                Hindi:<input type="radio" id="Medium" name="Medium" value="Hindi"{% if student.Medium=='Hindi' %}checked{% endif %}/>
+                English:<input type="radio" id="Medium" name="Medium" value="English"{% if student.Medium=='English' %}checked{% endif %}/>
+                Marathi:<input type="radio" id="Medium" name="Medium" value="Marathi"{% if student.Medium=='Marathi' %}checked{% endif %}/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Gender">Gender:</label></td>
+                <td>
+                    Male:<input type="radio"  name="Gender" value = "male"{% if student.Gender=='male' %}checked{% endif %}/>
+                    Female:<input type="radio"  name="Gender" value = "female"{% if student.Gender=='female' %}checked{% endif %}/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="PhoneNumber">Phone Number:</label></td>
+                <td><input type="text" id="PhoneNumber" name="PhoneNumber" value="{{student.PhoneNumber}}"></td>
+            </tr>
+            <tr>
+                <td><label for="Fee">Fee:</label></td>
+                <td><input type="number" id="Fee" name="Fee" value="{{student.Fee}}"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" name ="submit" value="submit" style="padding: 10px 20px;" class="btn btn-warning">
+                </td>
+            </tr>
+        </table>
+    </form>    
+</div>
+{% endblock %}
