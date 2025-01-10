@@ -1,0 +1,59 @@
+{% extends 'master.html' %}
+{% include 'header.html' %}
+
+{% block title %} Add Students {% endblock %}
+
+
+{% block body %}
+<h1>Create a New Student</h1>
+<div class="container">
+    <form method="POST" action='' style="width: 100%; margin: auto;">
+        <table class="table" style="width: 100%; border-spacing: 15px;">
+            <tr>
+                <td><label for="fullname">Full Name:</label></td>
+                <td><input type="text" id="fullname" name="fullname" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="FatherName">Father's Name:</label></td>
+                <td><input type="text" id="FatherName" name="FatherName" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="MotherName">Mother's Name:</label></td>
+                <td><input type="text" id="MotherName" name="MotherName" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="SchoolName">School Name:</label></td>
+                <td><input type="text" id="SchoolName" name="SchoolName" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="Medium">Medium:</label></td>
+                <td>
+                Hindi:<input type="radio" id="Medium" name="Medium" value="Hindi"/>
+                English:<input type="radio" id="Medium" name="Medium" value="English"/>
+                Marathi:<input type="radio" id="Medium" name="Medium" value="Marathi"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Gender">Gender:</label></td>
+                <td>
+                    Male:<input type="radio"  name="Gender" value = "male"/>
+                    Female:<input type="radio"  name="Gender" value = "female"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="PhoneNumber">Phone Number:</label></td>
+                <td><input type="text" id="PhoneNumber" name="PhoneNumber" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td><label for="Fee">Fee:</label></td>
+                <td><input type="number" id="Fee" name="Fee" style="width: 100%;" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" name ="submit" value="submit" style="padding: 10px 20px;" class="btn btn-warning">
+                </td>
+            </tr>
+        </table>
+    </form>    
+</div>
+{% endblock %}
